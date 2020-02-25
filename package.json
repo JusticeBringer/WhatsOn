@@ -1,0 +1,30 @@
+{
+  "name": "project",
+  "version": "1.0.1",
+  "description": "\"messenger app\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JusticeBringer/WhatsOn.git"
+  },
+  "keywords": [
+    "node",
+    "messenger",
+    "app"
+  ],
+  "author": "Gabriel Arghire, Stefan Chitu, Daniel Simionov, Adrian Olaru (and Laiu Florin)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JusticeBringer/WhatsOn/issues"
+  },
+  "homepage": "https://github.com/JusticeBringer/WhatsOn#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "socket.io": "^2.3.0"
+  }
+}
