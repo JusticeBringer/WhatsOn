@@ -1,0 +1,22 @@
+
+const session = require('express-session');
+// initializari socket.io
+const http=require('http');
+const socket = require('socket.io');
+const server = new http.createServer(app);
+var  io= socket(server);
+io = io.listen(server);//asculta pe acelasi port ca si serverul
+
+//setez o sesiune
+app.use(session({
+    secret: 'abcdefg',//folosit de express session pentru criptarea id-ului de sesiune
+    resave: true,
+    saveUninitialized: false
+}));
+
+var conexiune_index;
+io.on("connection", (socket) => {
+    console.log("Esti pe app!");
+    conexiune_index=socket;
+    socket.on('disconnect', () => {conexiune_index=null;console.log('Nu mai esti pe app')});
+});
