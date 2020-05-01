@@ -57,7 +57,7 @@
         padding: 0 0 5vh 0;
     }
     .ft-ban{
-        background-color: black;
+        background-color: #39394d;
         color: white;
         padding: 5vh 0 0 0;
     }
