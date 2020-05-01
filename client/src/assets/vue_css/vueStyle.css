@@ -1,0 +1,92 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+section {
+    line-height: 1.7em;
+    font-size: 1.6em;
+}
+
+.fit100{
+    width: 100%;
+}
+.fit90{
+    width: 90%;
+}
+.fit80{
+    width: 80%;
+}
+.fit70{
+    width: 70%;
+}
+.fit60{
+    width: 60%;
+}
+.fit50{
+    width: 50%;
+}
+.fit40{
+    width: 40%;
+}
+.fit35{
+    width: 35%;
+}
+.fit30{
+    width: 30%;
+}
+.fit20{
+    width: 20%;
+}
+.fit10{
+    width: 10%;
+}
+.fit5{
+    width: 5%;
+}
+.fit1{
+    width: 1%;
+}
+
+.fltLeftStyle{
+    float: left;
+}
+
+.fltRightStyle{
+    float: right;
+}
+
+.bigText{
+    font-size: 3vw;
+}
+
+.p-size{
+    font-size: 2vw;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.text-banner{
+    text-align: center;
+    font-size: 2.5vw;
+    color: black;
+    font-weight: 500;
+    padding-top: 5vh;
+    margin: 0 0 10vh 0;
+}
+
+.banner{
+    background-color: #efefef;
+    color: white;
+    padding: 0 0 2.5vw 0;
+}
