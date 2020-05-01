@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "nano": "^8.2.2",
+    "serve": "^11.3.0",
     "server": "^1.0.27",
     "socket.io": "^2.3.0",
     "start": "^5.1.0"
