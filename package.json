@@ -4,11 +4,13 @@
   "description": "\"messenger app\"",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JusticeBringer/WhatsOn.git"
+    "url": "git+https://github.com/JusticeBringer/SeeYou.git"
   },
   "keywords": [
     "node",
@@ -18,13 +20,27 @@
   "author": "Gabriel Arghire, Stefan Chitu, Daniel Simionov, Adrian Olaru (and Laiu Florin)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JusticeBringer/WhatsOn/issues"
+    "url": "https://github.com/JusticeBringer/SeeYou/issues"
   },
-  "homepage": "https://github.com/JusticeBringer/WhatsOn#readme",
+  "homepage": "https://github.com/JusticeBringer/SeeYou#readme",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "socket.io": "^2.3.0"
+    "nano": "^8.2.2",
+    "server": "^1.0.27",
+    "socket.io": "^2.3.0",
+    "start": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.2.0",
+    "nodemon": "^2.0.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
   }
 }
