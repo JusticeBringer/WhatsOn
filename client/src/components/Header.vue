@@ -12,8 +12,8 @@
                     <li class="fltRight"> <a href="/login"> Login </a> </li>
                     <li class="fltRight"> <a href="/register"> Register </a> </li>
                     <li class="fltRight"> <a href="/download"> Download </a> </li>
-                    <li class="fltRight"> <a href="/pricing"> Pricing </a> </li>
-                    <li class="fltRight"> <a href="/about"> About </a> </li>
+                    <li class="fltRight"> <a href="#pricing_section"> Pricing </a> </li>
+                    <li class="fltRight"> <a href="#about_section"> About </a> </li>
                 </ul>
             </nav>
         </div>

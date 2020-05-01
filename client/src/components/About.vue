@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="about_section">
         <div class="about-banner">
             <div class="row">
                 <h1 class="text-banner-about"> About us</h1>
@@ -42,12 +42,12 @@
                 <div class="fit20 fltLeftStyle"><p/></div>
                 <div class="fit10 fltLeftStyle"><p/></div>
                 <div class="fit40 fltLeftStyle">
-                    <p class="under-h2-text"> SeeYou is maybe the upcoming leader in modern enterprise video communications,
+                    <p class="under-h2-text some-space-bot"> SeeYou is maybe the upcoming leader in modern enterprise video communications,
                         with an easy, reliable cloud platform for video and audio conferencing, collaboration,
                         chat, and webinars across mobile devices, desktops, telephones, and room systems.
                         Founded in 2020, SeeYou helps businesses and organizations bring their teams together
                         in a frictionless environment to get more done.
-                        SeeYou is not (yet) a publicly traded company on Nasdaq (ticker: ZM)
+                        SeeYou is not a publicly traded company
                         and headquartered in Romania, Bucharest. </p>
                 </div>
             </div>
@@ -69,6 +69,9 @@
     }
     .some-space{
         margin: 5vh 0 0 0;
+    }
+    .some-space-bot{
+        margin: 0 0 10vh 0;
     }
     .h2-text{
         font-size: 1.3vw;
