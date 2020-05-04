@@ -1,15 +1,22 @@
 <template>
-  <div>
+  <div id="container">
     <HeadLinks/>
     <Header/>
 
-    <HeroImage/>
-    <Servicii/>
-    <Ranking/>
-    <WhySeeYou/>
-    <Testimonials/>
-    <About/>
-    <Pricing/>
+    <HeroImage id="first_section">
+    </HeroImage>
+    <Servicii id="services_section">
+    </Servicii>
+    <Ranking id="ranking_section">
+    </Ranking>
+    <WhySeeYou id="why_section">
+    </WhySeeYou>
+    <Testimonials id="testimonials_section">
+    </Testimonials>
+    <About id="about_section">
+    </About>
+    <Pricing id="pricing_section">
+    </Pricing>
 
     <Footer/>
 

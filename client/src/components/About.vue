@@ -1,5 +1,5 @@
 <template>
-    <div id="about_section">
+    <div>
         <div class="about-banner">
             <div class="row">
                 <h1 class="text-banner-about"> About us</h1>
