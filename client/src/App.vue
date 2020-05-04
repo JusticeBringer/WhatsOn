@@ -17,6 +17,8 @@
     </About>
     <Pricing id="pricing_section">
     </Pricing>
+    <Download id="download_section">
+    </Download>
 
     <Footer/>
 
@@ -35,6 +37,7 @@ import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Pricing from "./components/Pricing";
+import Download from "./components/Download";
 
 export default {
   name: 'App',
@@ -48,6 +51,8 @@ export default {
     Testimonials,
     About,
     Pricing,
+    Download,
+
     Footer
   }
 }
