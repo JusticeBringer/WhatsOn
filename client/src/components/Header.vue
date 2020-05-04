@@ -19,7 +19,7 @@
                          <!-- HeaderLinks -->
 
                         <li class="fltRight"> <a href="/login"> Login </a> </li>
-                        <li class="fltRight"> <a href="/register"> Register </a> </li>
+                        <li class="fltRight"> <a href="#register_section"> Register </a> </li>
                         <li class="fltRight"> <a href="#download_section"> Download </a> </li>
                         <li class="fltRight"> <a href="#pricing_section"> Pricing </a> </li>
                         <li class="fltRight"> <a href="#about_section"> About </a> </li>
