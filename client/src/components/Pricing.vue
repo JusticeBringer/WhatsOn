@@ -1,5 +1,5 @@
 <template>
-    <div id="pricing_section">
+    <div>
         <div class="banner">
             <div class="row">
                 <h1 class="text-banner"> Pricing </h1>
