@@ -23,7 +23,7 @@
                 <button class="download-button"> <img src="../assets/pictures/linux_logo.png" class="img-resize"> Download  </button>
             </div>
         </div>
-        <div class="row">
+        <div class="row some-space-bottom">
             <div class="fit20 fltLeftStyle"><p/></div>
             <div class="fit1 fltLeftStyle"><p/></div>
             <div class="fit1 fltLeftStyle"><p/></div>
@@ -44,6 +44,9 @@
 </script>
 
 <style scoped>
+    .some-space-bottom{
+        margin-bottom: 10vh;
+    }
     .img-resize{
         width: 1.7vw;
         height: 3vh;

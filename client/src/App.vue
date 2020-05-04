@@ -19,6 +19,8 @@
     </Pricing>
     <Download id="download_section">
     </Download>
+    <Register id="register_section">
+    </Register>
 
     <Footer/>
 
@@ -38,6 +40,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Pricing from "./components/Pricing";
 import Download from "./components/Download";
+import Register from "./components/Register";
 
 export default {
   name: 'App',
@@ -52,9 +55,11 @@ export default {
     About,
     Pricing,
     Download,
+    Register,
 
     Footer
   }
+
 }
 </script>
 
