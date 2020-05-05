@@ -21,6 +21,8 @@
     </Download>
     <Register id="register_section">
     </Register>
+    <Login id="login_section">
+    </Login>
 
     <Footer/>
 
@@ -41,6 +43,7 @@ import About from "./components/About";
 import Pricing from "./components/Pricing";
 import Download from "./components/Download";
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 export default {
   name: 'App',
@@ -56,6 +59,7 @@ export default {
     Pricing,
     Download,
     Register,
+    Login,
 
     Footer
   }
