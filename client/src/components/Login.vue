@@ -1,0 +1,111 @@
+<template>
+    <div>
+        <div class="">
+            <h1 class="text-banner"> Login </h1>
+
+            <div class="row">
+                <div class="fit20 fltLeftStyle"><p/></div>
+                <div class="fit20 fltLeftStyle"><p/></div>
+                <div class="fit20 fltLeftStyle">
+                    <form id="app" @submit="checkForm" method="post">
+
+                        <!-- Error checking
+                        <p v-if="errors.length">
+                            <b>Please correct the following error(s):</b>
+                            <ul>
+                                <li v-for="error in errors" :key="error.id">{{ error }}</li>
+                            </ul>
+                        </p>
+                        -->
+
+                        <p>
+                            <label for="email" class="row">Email address </label>
+                            <input
+                                    id="email"
+                                    v-model="email"
+                                    type="text"
+                                    name="email"
+                                    placeholder="example@gmail.com"
+                            >
+                        </p>
+                        <p>
+                            <label for="password" class="row">Password</label>
+                            <input
+                                    id="password"
+                                    v-model="password"
+                                    type="password"
+                                    name="password"
+                                    placeholder="***********"
+                            >
+                        </p>
+
+                        <p>
+                            <input
+                                    type="submit"
+                                    value="Sign In"
+                            >
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fit20 fltLeftStyle"><p/></div>
+                <div class="fit20 fltLeftStyle"><p/></div>
+                <div class="fit20 fltLeftStyle">
+                    <div class="hr-text">
+                  <span class="for-hr-text">
+                    OR
+                  </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row some-space-login">
+                <div class="fit20 fltLeftStyle"><p/></div>
+                <div class="fit20 fltLeftStyle"><p/></div>
+                <div class="fit20 fltLeftStyle">
+                    <button class="google-button"> Sign in with Google </button>
+                    <button class="google-button"> Sign in with Facebook </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "Login"
+    }
+</script>
+
+<style scoped>
+    .some-space-login{
+        margin: 4vh 0 8vh 0;
+    }
+    .for-hr-text{
+        font-size: 1.2vw;
+        background-color: #ffffff;
+        color: black;
+        padding: 0 0.5vw 0 0.5vw;
+    }
+    .hr-text{
+        width: 100%;
+        height: 1.6vh;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
+    .google-button{
+         background-color: #ffffff;
+         color: black;
+         transition: 0.3s ease-in;
+         font-size: 0.8vw;
+         border: 1px solid black;
+         border-radius: 2px;
+         padding: 0.4vw;
+         width: 100%;
+         margin-bottom: 2vh;
+     }
+    .google-button:hover{
+        background-color: #54b6d3;
+    }
+</style>

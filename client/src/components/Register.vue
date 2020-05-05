@@ -99,7 +99,7 @@
         margin-bottom: 2vh;
     }
     .google-button:hover{
-        background-color: #d3d3d3;
+        background-color: #54b6d3;
     }
     .some-space-top{
         margin: 4vh 0 0 0;
@@ -116,56 +116,5 @@
         border-bottom: 1px solid black;
         text-align: center;
     }
-    label{
-        font-size: 1vw;
-        color: black;
-    }
-    label:after{
-        margin: 0 0 1.2vh 0 !important;
-    }
 
-    input[type=text] {
-        width: 100%;
-        padding: 0.6vw;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin: 0.4vh 0 0.6vh 0;
-        resize: vertical;
-    }
-
-    input[type=email]{
-        width: 100%;
-        padding: 0.6vw;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin: 0.4vh 0 0.6vh 0;
-        resize: vertical;
-    }
-
-    input[type=password] {
-        width: 100%;
-        padding: 0.6vw;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin: 0.4vh 0 0.6vh 0;
-        resize: vertical;
-    }
-
-    input[type=submit] {
-        background-color: #4ca2ec;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: ease-in-out 0.4s;
-        width: 100%;
-    }
-
-    input[type=submit]:hover {
-        background-color: #3974ac;
-    }
 </style>

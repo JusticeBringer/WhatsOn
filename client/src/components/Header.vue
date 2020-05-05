@@ -16,9 +16,9 @@
                             <i class="fa fa-bars"></i>
                         </li>
                         -->
-                         <!-- HeaderLinks -->
 
-                        <li class="fltRight"> <a href="/login"> Login </a> </li>
+                         <!-- HeaderLinks -->
+                        <li class="fltRight"> <a href="#login_section"> Login </a> </li>
                         <li class="fltRight"> <a href="#register_section"> Register </a> </li>
                         <li class="fltRight"> <a href="#download_section"> Download </a> </li>
                         <li class="fltRight"> <a href="#pricing_section"> Pricing </a> </li>
