@@ -23,6 +23,8 @@
     </Register>
     <Login id="login_section">
     </Login>
+    <Contact id="contact_section">
+    </Contact>
 
     <Footer/>
 
@@ -44,6 +46,7 @@ import Pricing from "./components/Pricing";
 import Download from "./components/Download";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Contact from "./components/Contact";
 
 export default {
   name: 'App',
@@ -60,6 +63,7 @@ export default {
     Download,
     Register,
     Login,
+    Contact,
 
     Footer
   }
