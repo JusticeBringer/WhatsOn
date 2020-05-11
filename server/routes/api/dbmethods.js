@@ -1,5 +1,3 @@
-
-
 module.exports = {
     connect_pool: function(){
         var mysql = require('mysql');
@@ -11,6 +9,24 @@ module.exports = {
             database: "heroku_c51823e5cbd41df"
         });
         return pool
+    },
+    get_users: function(pool){
+        return new Promise(function(resolve, reject){
+            var sql = "select * from users";
+            pool.query(sql, function(err, result){
+                if(err){
+                    throw reject(err)
+                }
+                else{
+                    if(result.length === 0){
+                        return false
+                    }
+                    else{
+                        return resolve(result)
+                    }
+                }
+            })
+        })
     },
     add_user: function(pool, email, password, username){
         var sql = "insert into users (email, password, username) values (?, ?, ?)";
@@ -99,7 +115,7 @@ module.exports = {
     find_friends: function(pool, id){
         return new Promise(function(resolve, reject){
             var sql ="SELECT * FROM users WHERE users.id IN" +
-            "( SELECT user_id_1 FROM friends WHERE user_id_2 = ? UNION SELECT user_id_2 FROM friends WHERE user_id_1 = ?)"
+                "( SELECT user_id_1 FROM friends WHERE user_id_2 = ? UNION SELECT user_id_2 FROM friends WHERE user_id_1 = ?)"
             var values = [id, id]
             pool.query(sql, values, function (err, result) {
                 if(err){
