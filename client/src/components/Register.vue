@@ -28,6 +28,16 @@
                         >
                     </p>
                     <p>
+                        <label for="username" class="row">Username </label>
+                        <input
+                                id="username"
+                                v-model="email"
+                                type="text"
+                                name="username"
+                                placeholder="Username"
+                        >
+                    </p>
+                    <p>
                         <label for="password" class="row">Password</label>
                         <input
                                 id="password"

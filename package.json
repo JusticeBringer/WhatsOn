@@ -2,10 +2,10 @@
   "name": "project",
   "version": "1.0.1",
   "description": "\"messenger app\"",
-  "main": "app.js",
+  "main": "server/app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,9 +24,11 @@
   },
   "homepage": "https://github.com/JusticeBringer/SeeYou#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "mysql": "^2.18.1",
     "nano": "^8.2.2",
     "serve": "^11.3.0",
     "server": "^1.0.27",
@@ -37,6 +39,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
+    "cors": "^2.8.5",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
     "nodemon": "^2.0.3",
