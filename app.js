@@ -1,42 +1,119 @@
-const path = require('path');
-const express = require('express');
-/*include modulul express
-memorand in variabila express obiectul asociat modulului(exportat de modul)*/
-const app = express();
-
-// #######################################################  Socket
-
-// ########################################################## Pentru APP ##############################
-
-//setez folderele statice (cele in care nu am fisiere generate prin node)
-app.use('/css', express.static('css'));
-app.use('/javascript', express.static('javascript'));
-app.use('/app_files', express.static('app_files'));
-app.use('/app_pictures', express.static('app_pictures'));
-app.use('/uploads_from_user', express.static('uploads_from_user'));
-
-// pentru folosirea ejs-ului
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname));
-
-// cand se face o cerere get catre pagina de index
-app.get('/', function(req, res) {
-    /*afiseaza(render) pagina folosind ejs (deoarece este setat ca view engine) */
-    res.render('html/index');
-});
-
-app.get('/register', function(req, res) {
-    res.render('html/register');
-});
-
-app.get('/login', function(req, res) {
-    /*afiseaza(render) pagina folosind ejs (deoarece este setat ca view engine) */
-    res.render('html/login');
-});
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`App listening to ${PORT}....`) ;
-    console.log('Press Ctrl+C to quit.')
-});
+module.exports = {
+    connect_pool: function(){
+        var mysql = require('mysql');
+        var pool = mysql.createPool({
+            connectionLimit: 5,
+            host: "eu-cdbr-west-03.cleardb.net",
+            user: "b42cb5c849c08b",
+            password: "19dca6ce",
+            database: "heroku_c51823e5cbd41df"
+        });
+        return pool
+    },
+    add_user: function(pool, email, password, username){
+        var sql = "insert into users (email, password, username) values (?, ?, ?)";
+        var values = [email, password, username]
+        pool.query(sql, values, function (err, result) {
+            if (err) throw err;
+            console.log("Adaugat user nou");
+        });
+    },
+    is_user: function(pool, email, password){
+        return new Promise(function(resolve, reject){
+            var sql = "select * from users where email = ? and password = ?";
+            var values = [email, password];
+            pool.query(sql, values, function(err, result){
+                if(err){
+                    throw reject(err)
+                }
+                else{
+                    if(result.length == 0){
+                        return false
+                    }
+                    else{
+                        return resolve(result[0])
+                    }
+                }
+            })
+        })
+    },
+    change_username: function(pool, id, new_username){
+        var sql = "update users set username = ? where id = ?"
+        var values = [new_username, id]
+        pool.query(sql, values, function(err, result){
+            if(err)
+                throw err
+            else
+                console.log("Username changed for id" + id)
+        })
+    },
+    change_email: function(pool, id, new_email){
+        var sql = "update users set email = ? where id = ?"
+        var values = [new_email, id]
+        pool.query(sql, values, function(err, result){
+            if(err)
+                throw err
+            else
+                console.log("Email changed for id: " + id)
+        })
+    },
+    change_password: function(pool, id, new_password){
+        var sql = "update users set password = ? where id = ?"
+        var values = [new_password, id]
+        pool.query(sql, values, function(err, result){
+            if(err)
+                throw err
+            else
+                console.log("Password changed for id" + id)
+        })
+    },
+    find_user: function(pool, username){
+        return new Promise(function(resolve, reject){
+            var sql = "select * from users where username = ?";
+            var values = [username];
+            pool.query(sql, values, function(err, result){
+                if(err){
+                    throw reject(err)
+                }
+                else{
+                    if(result.length == 0){
+                        return false
+                    }
+                    else{
+                        return resolve(result)
+                    }
+                }
+            })
+        })
+    },
+    add_friend: function(pool, id_sender, id_friend){
+        var sql = "insert into friends (user_id_1, user_id_2) values (?, ?)";
+        var values = [id_sender, id_friend]
+        pool.query(sql, values, function (err, result) {
+            if (err) throw err;
+            console.log("Adaugat prietenie noua");
+        });
+    },
+    find_friends: function(pool, id){
+        return new Promise(function(resolve, reject){
+            var sql ="SELECT * FROM users WHERE users.id IN" +
+            "( SELECT user_id_1 FROM friends WHERE user_id_2 = ? UNION SELECT user_id_2 FROM friends WHERE user_id_1 = ?)"
+            var values = [id, id]
+            pool.query(sql, values, function (err, result) {
+                if(err){
+                    throw reject(err)
+                }
+                else{
+                    if(result.length == 0){
+                        return false
+                    }
+                    else{
+                        return resolve(result)
+                    }
+                }
+            })
+        });
+    }
+}
