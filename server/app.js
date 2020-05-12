@@ -18,10 +18,6 @@ app.use(cors());
 // app.use('/app_pictures', express.static('app_pictures'));
 // app.use('/uploads_from_user', express.static('uploads_from_user'));
 
-// pentru folosirea ejs-ului
-// app.set('view engine', 'ejs');
-// app.use(express.static(__dirname));
-
 const users = require('./routes/api/users');
 app.use('/api/users', users);
 
