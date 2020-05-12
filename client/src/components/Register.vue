@@ -5,65 +5,85 @@
         <div class="row">
             <div class="fit20 fltLeftStyle"><p/></div>
             <div class="fit20 fltLeftStyle"><p/></div>
+
             <div class="fit20 fltLeftStyle">
-                <form id="app" @submit="checkForm" method="post">
+                <div class="summary text-red" v-if="$v.form.$error">
+                    <p> Form has following errors: </p>
+                    <div v-if="$v.form.user_email.$error">
+                        <h2> Please enter a correct email address </h2>
+                    </div>
+                    <div v-if="$v.form.user_username.$error">
+                        <h2> Please enter an username</h2>
+                    </div>
+                    <div v-if="$v.form.user_password.$error">
+                        <h2> Please enter a password </h2>
+                    </div>
+                    <div v-if="$v.form.user_confirmpassword.$error">
+                        <h2> Please confirm your password </h2>
+                    </div>
+                </div>
+                <form @submit.prevent="checkForm">
 
-                    <!-- Error checking
-                    <p v-if="errors.length">
-                        <b>Please correct the following error(s):</b>
-                        <ul>
-                            <li v-for="error in errors" :key="error.id">{{ error }}</li>
-                        </ul>
-                    </p>
-                    -->
-
-                    <p>
+                    <div
+                            :class="{ 'hasError': $v.form.user_email.$error }"
+                    >
                         <label for="email" class="row">Email address </label>
                         <input
                                 id="email"
-                                v-model="email"
-                                type="text"
+                                v-model="form.user_email"
+                                type="email"
                                 name="email"
                                 placeholder="example@gmail.com"
                         >
-                    </p>
-                    <p>
+                    </div>
+
+                    <div
+                            :class="{ 'hasError': $v.form.user_username.$error }"
+                    >
                         <label for="username" class="row">Username </label>
                         <input
                                 id="username"
-                                v-model="email"
+                                v-model="form.user_username"
                                 type="text"
                                 name="username"
                                 placeholder="Username"
                         >
-                    </p>
-                    <p>
+                    </div>
+
+                    <div
+                            :class="{ 'hasError': $v.form.user_password.$error }"
+                    >
                         <label for="password" class="row">Password</label>
                         <input
                                 id="password"
-                                v-model="password"
+                                v-model="form.user_password"
                                 type="password"
                                 name="password"
                                 placeholder="***********"
                         >
-                    </p>
-                    <p>
+                    </div>
+
+                    <div
+                            :class="{ 'hasError': $v.form.user_confirmpassword.$error }"
+                    >
                         <label for="confirmpassword" class="row">Confirm password</label>
                         <input
                                 id="confirmpassword"
-                                v-model="password"
+                                v-model="form.user_confirmpassword"
                                 type="password"
-                                name="password"
+                                name="confirmpassword"
                                 placeholder="***********"
                         >
-                    </p>
+                    </div>
 
-                    <p>
-                        <input
+                    <div>
+                        <button
                                 type="submit"
-                                value="Sign Up"
+                                class="google-button"
                         >
-                    </p>
+                            Sign up
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -90,13 +110,77 @@
 </template>
 
 <script>
+
+    import UserService from "../UserService";
+    import { required, email, minLength } from "vuelidate/lib/validators";
+
     export default {
-        name: "Register"
+        name: "Register",
+        data() {
+            return {
+                form: {
+                    errors: [],
+                    users: [],
+                    error_users: '',
+                    user_email: '',
+                    user_username: '',
+                    user_password: '',
+                    user_confirmpassword: ''
+                }
+            }
+        },
+        validations:{
+          form: {
+              user_email: {required, email},
+              user_username: { required, min: minLength(2)},
+              user_password: {required, min: minLength(2)},
+              user_confirmpassword: {required, min: minLength(2)}
+          }
+        },
+
+        async created() {
+            try {
+                this.form.users = await UserService.getUsers();
+                console.log("Users in register.vue ", this.form.users)
+
+            } catch (err) {
+                this.form.error_users = err.message;
+            }
+        },
+        methods:{
+            async checkForm(){
+                this.$v.form.$touch();
+                if(this.$v.form.$error)
+                    return;
+
+                console.log("User in check form ", this.form.user_email, this.form.user_password, this.form.user_username);
+                let itIs = false;
+
+                await UserService.insertUser(this.form.user_email, this.form.user_password, this.form.user_username)
+                    .catch(() => {
+                        console.log("User already in database");
+                        alert("Email address is already in use");
+                        itIs = true;
+                    });
+                if (itIs === false)
+                    alert('Registration completed');
+                itIs = false;
+            },
+        }
     }
 
 </script>
 
 <style scoped>
+    p{
+        color: red;
+        font-size: 1.5vw;
+    }
+    h2{
+        color: #964e45;
+        font-size: 1.5vh;
+    }
+
     .google-button{
         background-color: #ffffff;
         color: black;
