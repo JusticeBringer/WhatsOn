@@ -18,9 +18,23 @@ export default class UserService{
     }
 
     //Add user
-    static insertUser(email, password, username){
+    static insertUser(email, password, username, valueCase){
         return axios.post(url, {
-            email, password, username
+            email, password, username, valueCase
+        })
+    }
+
+    //Login user
+    static loginUser(email, password, valueCase){
+        return axios.post(url, {
+            email, password, valueCase
+        })
+    }
+
+    //Contact send request
+    static sendRequest(email, subject, description, valueCase){
+        return axios.post(url, {
+            email, subject, description, valueCase
         })
     }
 
