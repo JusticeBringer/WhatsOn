@@ -16,7 +16,7 @@
                             <h2> Please enter a password </h2>
                         </div>
                     </div>
-                    <form @submit.prevent="checkFormLogin">
+                    <form @submit.prevent="checkFormLogin" method="post">
 
                         <!-- Error checking
                         <p v-if="errors.length">
@@ -126,17 +126,16 @@
                     return;
 
                 console.log("User in check form login", this.form.user_email, this.form.user_password);
-                let itIs = false;
 
                 await UserService.loginUser(this.form.user_email, this.form.user_password, 2)
                     .catch(() => {
                         console.log("User already in database");
                         alert("Account was not found. Please register!");
-                        itIs = true;
+                    }).then(respo => {
+                        console.log(respo);
+                        alert('Login succesful. You will be redirected in short time.');
+                        //window.location = 'http://localhost:5000/account'
                     });
-                if (itIs === false)
-                    alert('Login succesfull');
-                itIs = false;
             },
         }
     }
