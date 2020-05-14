@@ -76,14 +76,12 @@
                         >
                     </div>
 
-                    <div>
-                        <button
+                    <p>
+                        <input
                                 type="submit"
-                                class="google-button"
+                                value="Sign up"
                         >
-                            Sign up
-                        </button>
-                    </div>
+                    </p>
                 </form>
             </div>
         </div>
@@ -156,7 +154,7 @@
                 console.log("User in check form ", this.form.user_email, this.form.user_password, this.form.user_username);
                 let itIs = false;
 
-                await UserService.insertUser(this.form.user_email, this.form.user_password, this.form.user_username)
+                await UserService.insertUser(this.form.user_email, this.form.user_password, this.form.user_username, 1)
                     .catch(() => {
                         console.log("User already in database");
                         alert("Email address is already in use");
