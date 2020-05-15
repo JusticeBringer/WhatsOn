@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/users';
+const url = 'http://localhost:5000';
 
 export default class UserService{
     //Get Users
@@ -21,6 +21,8 @@ export default class UserService{
     static insertUser(email, password, username, valueCase){
         return axios.post(url, {
             email, password, username, valueCase
+        }).catch((err) => {
+            console.log(err);
         })
     }
 
@@ -28,13 +30,6 @@ export default class UserService{
     static loginUser(email, password, valueCase){
         return axios.post(url, {
             email, password, valueCase
-        })
-    }
-
-    //Contact send request
-    static sendRequest(email, subject, description, valueCase){
-        return axios.post(url, {
-            email, subject, description, valueCase
         })
     }
 
