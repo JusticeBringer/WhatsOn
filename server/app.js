@@ -4,15 +4,17 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const session = require('express-session');
 const formidable = require("formidable");
-
-
+const redis = require('redis');
+const redisStore = require('connect-redis')(session);
+const client  = redis.createClient();
 const app = express();
 
 app.use(express.static(__dirname + '/views'));
-const router = express.Router();
 
 app.use(bodyParser.json());
 app.use(cors());
+
+
 
 // #######################################################  Socket
 
@@ -27,9 +29,11 @@ app.use(cors());
 
 //setez o sesiune
 app.use(session({
-    secret: 'abcdefg',//folosit de express session pentru criptarea id-ului de sesiune
-    resave: true,
-    saveUninitialized: false
+    secret: 'ssshhhhh',
+    // create new redis store.
+    store: new redisStore({ host: 'localhost', port: 6379, client: client, ttl : 260}),
+    saveUninitialized: false,
+    resave: false
 }));
 
 app.set('view engine', 'ejs');
@@ -51,7 +55,20 @@ app.post('/login', function (req, res) {
         let usr = await is_user_login(fields.email, fields.password);
 
         if (usr){
-            res.render('account');
+
+            req.session.email = fields.email;
+            req.session.password = fields.password;
+
+            let email = req.session.email;
+            let password = req.session.password;
+
+            let usertt = {email, password};
+
+
+            req.session.user = usertt;
+            console.log(req.session.user);
+
+            res.render('account', {user: req.session.user});
         }
         else{
             res.render('login');
@@ -62,7 +79,10 @@ app.post('/login', function (req, res) {
 
 //Profile page
 app.get('/account', function (req, res) {
-    res.render('account');
+    let sess = req.session;
+    console.log(sess);
+
+    res.render('account', {user: sess.user});
 });
 
 //Value 1 is registration
@@ -83,21 +103,6 @@ app.post('/', async (req, res) => {
         if  (await is_user_login(req.body.email, req.body.password) === false){
             res.status(400).send();
         }
-        else{
-
-            let em = req.body.email;
-            let ps = req.body.password;
-            let user = {em, ps};
-            req.session.username=user; //setez userul ca proprietate a sesiunii
-
-            app.get('/account', function (req, res) {
-                res.render('account');
-            });
-            res.render('account');
-        }
-    }
-    else if (req.body.valueCase === 3){ //redirecting
-
     }
     else{ //we dont know what happened
         res.status(400).send();

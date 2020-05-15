@@ -153,15 +153,18 @@
 
                 console.log("User in check form ", this.form.user_email, this.form.user_password, this.form.user_username);
 
-                await UserService.insertUser(this.form.user_email, this.form.user_password, this.form.user_username, 1)
-                    .catch(() => {
-                        console.log("User already in database");
-                        alert("Email address is already in use");
-                    }).then( r => {
+                if (await UserService.insertUser(this.form.user_email, this.form.user_password, this.form.user_username, 1)
+                    .catch((r)  => {
                         console.log(r);
-                        alert('Registration completed. You will be redirected to login page.');
-                        window.location = 'http://localhost:5000/login'
-                    });
+                    })){
+                    alert('Registration completed. You will be redirected to login page.');
+                    window.location = 'http://localhost:5000/login'
+                }
+                else{
+                    console.log("User already in database");
+                    alert("Email address is already in use");
+                }
+
             },
         }
     }

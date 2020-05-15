@@ -21,6 +21,8 @@ export default class UserService{
     static insertUser(email, password, username, valueCase){
         return axios.post(url, {
             email, password, username, valueCase
+        }).catch((err) => {
+            console.log(err);
         })
     }
 

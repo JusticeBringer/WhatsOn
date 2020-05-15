@@ -25,17 +25,19 @@
   "homepage": "https://github.com/JusticeBringer/SeeYou#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-redis": "^4.0.4",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "formidable": "latest",
     "mysql": "^2.18.1",
     "nano": "^8.2.2",
     "nodemailer": "^6.4.6",
+    "redis": "^3.0.2",
     "serve": "^11.3.0",
     "server": "^1.0.27",
     "socket.io": "^2.3.0",
-    "start": "^5.1.0",
-    "formidable": "latest"
+    "start": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
