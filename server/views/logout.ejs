@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Pagina principala</title>
 
-
-    <title> SeeYou </title>
-
-    <meta name="keywords" content=" dumneavoastră">
-    <meta name="description" content="Prima pagina">
+    <meta charset="utf-8">
+    <meta name="author" content="Ionel"/>
 
     <style>
         .menu {
@@ -64,38 +62,11 @@
         .fit80{
             width: 80%;
         }
-        .fit70{
-            width: 70%;
-        }
-        .fit60{
-            width: 60%;
-        }
-        .fit50{
-            width: 50%;
-        }
-        .fit40{
-            width: 40%;
-        }
-        .fit35{
-            width: 35%;
-        }
-        .fit30{
-            width: 30%;
-        }
         .fit20{
             width: 20%;
         }
-        .fit15{
-            width: 15%;
-        }
         .fit10{
             width: 10%;
-        }
-        .fit5{
-            width: 5%;
-        }
-        .fit1{
-            width: 1%;
         }
         .big-name{
             font-size: 2vw !important;
@@ -121,7 +92,7 @@
             color: black;
             font-weight: 500;
             padding-top: 5vh;
-            margin: 0 0 10vh 0;
+            margin: 10vh 0 10vh 0;
         }
         p{
             color: red;
@@ -130,21 +101,6 @@
         h2{
             color: #964e45;
             font-size: 1.5vh;
-        }
-        .some-space-login{
-            margin: 4vh 0 8vh 0;
-        }
-        .for-hr-text{
-            font-size: 1.2vw;
-            background-color: #ffffff;
-            color: black;
-            padding: 0 0.5vw 0 0.5vw;
-        }
-        .hr-text{
-            width: 100%;
-            height: 1.6vh;
-            border-bottom: 1px solid black;
-            text-align: center;
         }
         .google-button{
             background-color: #ffffff;
@@ -182,21 +138,6 @@
         footer, header, hgroup, menu, nav, section, summary,
         time, mark, audio, video {
             font-size: 0.8vw;
-        }
-
-        a,
-        html, body, div, span, object, iframe,
-        h1, h2, h3, h4, h5, h6, blockquote, pre,
-        abbr, address, cite, code,
-        del, dfn, em, img, ins, kbd, q, samp,
-        small, strong, sub, sup, var,
-        b, i,
-        dl, dt, dd, ol, ul, li,
-        fieldset, form, label, legend,
-        table, caption, tbody, tfoot, thead, tr, th, td,
-        article, aside, canvas, details, figcaption, figure,
-        footer, header, hgroup, menu, nav, section, summary,
-        time, mark, audio, video {
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
@@ -285,67 +226,12 @@
             clear: both;
         }
 
-        .text-banner{
-            text-align: center;
-            font-size: 2.5vw;
-            color: black;
-            font-weight: 500;
-            padding-top: 10vh;
-            margin: 0 0 10vh 0;
-        }
-
-
         label{
             font-size: 1vw;
             color: black;
         }
         label:after{
             margin: 0 0 1.2vh 0 !important;
-        }
-
-        input[type=text] {
-            width: 100%;
-            padding: 0.6vw;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin: 0.4vh 0 0.6vh 0;
-            resize: vertical;
-        }
-
-        input[type=email]{
-            width: 100%;
-            padding: 0.6vw;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin: 0.4vh 0 0.6vh 0;
-            resize: vertical;
-        }
-
-        input[type=password] {
-            width: 100%;
-            padding: 0.6vw;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin: 0.4vh 0 0.6vh 0;
-            resize: vertical;
-        }
-
-        input[type=submit] {
-            background-color: #4ca2ec;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: ease-in-out 0.4s;
-            width: 100%;
-        }
-
-        input[type=submit]:hover {
-            background-color: #3974ac;
         }
 
         #header-wrap {
@@ -357,9 +243,10 @@
         }
 
     </style>
-
 </head>
 <body>
+
+
 <header>
     <div id="header-wrap">
         <div class="row barLooks">
@@ -373,77 +260,32 @@
                 </nav>
             </div>
             <div class="fit10 fltLeft">
-                <p/>
+                <p></p>
             </div>
         </div>
     </div>
 </header>
 
-<h1>Login page </h1>
+<main class="row">
+    <h1 class="text-banner">
+        You were logged out.
+    </h1>
+</main>
 
-<div>
-    <div class="">
-        <h1 class="text-banner"> Login </h1>
 
-        <div class="row">
-            <div class="fit20 fltLeftStyle"><p/></div>
-            <div class="fit20 fltLeftStyle"><p/></div>
-            <div class="fit20 fltLeftStyle">
-
-                <form method="post">
-
-                    <div
-                    >
-                        <label for="email" class="row">Email address </label>
-                        <input
-                                id="email"
-                                type="email"
-                                name="email"
-                                placeholder="example@gmail.com"
-                        >
-                    </div>
-                    <div
-                    >
-                        <label for="password" class="row">Password</label>
-                        <input
-                                id="password"
-                                type="password"
-                                name="password"
-                                placeholder="***********"
-                        >
-                    </div>
-
-                    <p>
-                        <input
-                                type="submit"
-                                value="Sign In"
-                        >
-                    </p>
-                </form>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="fit20 fltLeftStyle"><p/></div>
-            <div class="fit20 fltLeftStyle"><p/></div>
-            <div class="fit20 fltLeftStyle">
-                <div class="hr-text">
-                  <span class="for-hr-text">
-                    OR
-                  </span>
-                </div>
-            </div>
-        </div>
-        <div class="row some-space-login">
-            <div class="fit20 fltLeftStyle"><p/></div>
-            <div class="fit20 fltLeftStyle"><p/></div>
-            <div class="fit20 fltLeftStyle">
-                <button class="google-button"> Sign in with Google </button>
-                <button class="google-button"> Sign in with Facebook </button>
-            </div>
-        </div>
+<div class="row">
+    <div class="fit20 fltLeftStyle"><p/></div>
+    <div class="fit20 fltLeftStyle"><p/></div>
+    <div class="fit20 fltLeftStyle">
+        <script>
+            function redirect(){
+                window.location.href='http://localhost:5000/login';
+            }
+        </script>
+        <button onclick="redirect()" class="google-button">
+            Go to login page
+        </button>
     </div>
-
 </div>
 
 </body>

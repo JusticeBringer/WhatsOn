@@ -115,14 +115,14 @@ module.exports = {
     find_friends: function(pool, id){
         return new Promise(function(resolve, reject){
             var sql ="SELECT * FROM users WHERE users.id IN" +
-                "( SELECT user_id_1 FROM friends WHERE user_id_2 = ? UNION SELECT user_id_2 FROM friends WHERE user_id_1 = ?)"
-            var values = [id, id]
+                "( SELECT user_id_1 FROM friends WHERE user_id_2 = ? UNION SELECT user_id_2 FROM friends WHERE user_id_1 = ?)";
+            var values = [id, id];
             pool.query(sql, values, function (err, result) {
                 if(err){
                     throw reject(err)
                 }
                 else{
-                    if(result.length == 0){
+                    if(result.length === 0){
                         return false
                     }
                     else{
@@ -132,4 +132,4 @@ module.exports = {
             })
         });
     }
-}
+};

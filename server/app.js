@@ -38,6 +38,9 @@ app.use(session({
 
 app.set('view engine', 'ejs');
 
+//Static files
+app.use('/javascript', express.static('javascript'));
+
 //Get users
 app.get('/', async (req, res) => {
     const users = await loadUsers();
@@ -49,26 +52,34 @@ app.get('/login', function (req, res) {
     res.render('login');
 });
 
+//logout page
+app.get('/logout', function(req, res) {
+    req.session.destroy();//distrug sesiunea cand se intra pe pagina de logout
+    res.render('logout');
+});
+
 app.post('/login', function (req, res) {
     var form = new formidable.IncomingForm();
+
     form.parse(req, async function (err, fields, files) {
         let usr = await is_user_login(fields.email, fields.password);
 
         if (usr){
 
-            req.session.email = fields.email;
-            req.session.password = fields.password;
+            let id = usr.id;
+            let email = usr.email;
+            let password = usr.password;
+            let username = usr.username;
 
-            let email = req.session.email;
-            let password = req.session.password;
+            let usertt = {id, email, password, username};
 
-            let usertt = {email, password};
-
+            let friends_s = await loadFriends(usr.id);
+            console.log(friends_s);
 
             req.session.user = usertt;
             console.log(req.session.user);
 
-            res.render('account', {user: req.session.user});
+            res.render('account', {user: req.session.user, friends: friends_s});
         }
         else{
             res.render('login');
@@ -79,10 +90,18 @@ app.post('/login', function (req, res) {
 
 //Profile page
 app.get('/account', function (req, res) {
-    let sess = req.session;
-    console.log(sess);
+    console.log(req.session.user);
+    if(req.session.user){
+        // user can access account page
+        let sess = req.session;
+        console.log(sess);
 
-    res.render('account', {user: sess.user});
+        res.render('account', {user: sess.user});
+    }
+    else{
+        // user cannot access account page
+        res.render('login');
+    }
 });
 
 //Value 1 is registration
@@ -114,6 +133,15 @@ async function loadUsers(){
     let pool = app_ld.connect_pool();
 
     return app_ld.get_users(pool).then(result => {
+        return result;
+    });
+}
+
+async function loadFriends(id){
+    const app_ld = require('./routes/api/dbmethods');
+    let pool = app_ld.connect_pool();
+
+    return app_ld.find_friends(pool, id).then(result => {
         return result;
     });
 }

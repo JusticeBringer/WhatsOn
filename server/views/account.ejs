@@ -146,7 +146,7 @@
             border-bottom: 1px solid black;
             text-align: center;
         }
-        .google-button{
+        .logout-button{
             background-color: #ffffff;
             color: black;
             transition: 0.3s ease-in;
@@ -155,9 +155,9 @@
             border-radius: 2px;
             padding: 0.4vw;
             width: 100%;
-            margin-bottom: 2vh;
+            margin: 5vh 0 5vh 0;
         }
-        .google-button:hover{
+        .logout-button:hover{
             background-color: #54b6d3;
         }
         html{
@@ -356,6 +356,16 @@
             z-index: 1;
         }
 
+        .linkTab{
+            text-align: center;
+            font-size: 1.5vw !important;
+            color: dodgerblue;
+        }
+
+        .line-try{
+            border-bottom: 1px solid black;
+        }
+
     </style>
 
 </head>
@@ -374,7 +384,7 @@
                 </nav>
             </div>
             <div class="fit10 fltLeft">
-                <p/>
+                <p></p>
             </div>
         </div>
     </div>
@@ -384,12 +394,55 @@
 
 <div>
     <div class="">
-        <h1 class="text-banner"> Your account </h1>
-    <div/>
-
-    <h2 class="universalHeading" id="headingSalut"> Salut, <%= user.email %>
-    </h2>
+        <h1 class="text-banner"> Hello, <%= user.username %> </h1>
+    </div>
 </div>
+
+<script>
+    var prieteni = '<%- JSON.stringify(friends) %>';
+</script>
+
+<script src="javascript/account.js">
+    console.log("ge");
+
+</script>
+
+<div>
+    <div class="row">
+        <div class="fit20 fltLeftStyle"><p></p></div>
+        <div class="fit5 fltLeftStyle"><p></p></div>
+        <div class="fit20 fltLeftStyle line-try">
+            <div>
+                <a class="linkTab" onclick="displayProfile()">Profile </a>
+            </div>
+        </div>
+        <div class="fit20 fltLeftStyle line-try">
+            <div>
+                <a class="linkTab" onclick="displayFriends(prieteni)">Friends </a>
+            </div>
+        </div>
+        <div class="fit10 fltLeftStyle line-try">
+            <div>
+                <a class="linkTab">Make call </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="fit20 fltLeftStyle"><p></p></div>
+    <div class="fit5 fltLeftStyle"><p></p></div>
+    <div class="fit60 fltLeftStyle" id="undeAfisez">
+        <div class="fit10 fltLeftStyle">
+            <button class="logout-button" onclick="logoutUser()">
+                Logout
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
 
 </body>
 </html>
