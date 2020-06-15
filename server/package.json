@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "../node_modules/.bin/nodemon server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx watchify views/main.js -o views/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -15,15 +16,17 @@
   "keywords": [
     "node",
     "messenger",
-    "app"
+    "app",
+    "video"
   ],
-  "author": "Gabriel Arghire, Stefan Chitu, Daniel Simionov, Adrian Olaru (and Laiu Florin)",
+  "author": "Gabriel Arghire, Stefan Chitu, Daniel Simionov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JusticeBringer/SeeYou/issues"
   },
   "homepage": "https://github.com/JusticeBringer/SeeYou#readme",
   "dependencies": {
+    "audit": "0.0.6",
     "body-parser": "^1.19.0",
     "connect-redis": "^4.0.4",
     "ejs": "^3.0.1",
@@ -34,10 +37,11 @@
     "nano": "^8.2.2",
     "nodemailer": "^6.4.6",
     "redis": "^3.0.2",
-    "serve": "^11.3.0",
+    "serve": "^11.3.2",
     "server": "^1.0.27",
     "socket.io": "^2.3.0",
-    "start": "^5.1.0"
+    "start": "^5.1.0",
+    "simple-peer": "^9.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -49,6 +53,7 @@
     "nodemon": "^2.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "watchify": "^3.11.1"
   }
 }

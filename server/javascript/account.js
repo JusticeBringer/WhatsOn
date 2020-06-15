@@ -1,5 +1,3 @@
-
-
 function makeAlert(){
     window.alert("Hey");
 }
@@ -157,6 +155,10 @@ function displayFriends(friends) {
     }
 }
 
+function redirectToVideo() {
+    window.location.href = "http://localhost:5000/video";
+}
+
 function displayMakeCall(friends) {
     clearActive();
     clearDiv();
@@ -203,6 +205,7 @@ function displayMakeCall(friends) {
                 let bt_call = document.createElement("button");
                 bt_call.className = "call-button";
                 bt_call.innerText = "Start call";
+                bt_call.onclick = redirectToVideo;
 
                 dvP.appendChild(bt_call);
             }
@@ -279,11 +282,12 @@ function displayPendingCall(){
         if (incall_x === ut_id) {
 
 
-
             nr_call += 1;
         }
     }
 }
+
+
 
 window.onload = function () {
     initialPendingCall();

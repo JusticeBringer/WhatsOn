@@ -12,8 +12,47 @@ const app = express();
 app.use(express.static(__dirname + '/views'));
 
 app.use(bodyParser.json());
+
 app.use(cors());
 
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+let clients = 0;
+
+io.on('connection', function (socket) {
+    console.log("Clients: ", clients);
+
+    socket.on("NewClient", function () {
+        if (clients < 2) {
+            if (clients === 1) {
+                this.emit('CreatePeer')
+            }
+        }
+        else
+            this.emit('SessionActive');
+        clients++;
+    });
+    socket.on('Offer', SendOffer);
+    socket.on('Answer', SendAnswer);
+    socket.on('disconnect', Disconnect)
+});
+
+function Disconnect() {
+    if (clients > 0) {
+        if (clients <= 2)
+            this.broadcast.emit("Disconnect");
+        clients--;
+    }
+}
+
+function SendOffer(offer) {
+    this.broadcast.emit("BackOffer", offer)
+}
+
+function SendAnswer(data) {
+    this.broadcast.emit("BackAnswer", data)
+}
 
 
 // #######################################################  Socket
@@ -59,8 +98,22 @@ app.get('/logout', function(req, res) {
     res.render('logout');
 });
 
+//logout page
+app.get('/video', function(req, res) {
+    console.log("In video page", req.session.user.id);
+
+    let id = req.session.user.id;
+    let friends_s = dict[id];
+
+    res.render('video', {user: req.session.user, friends: friends_s});
+});
+
+var dict = {};
+
 app.post('/login', function (req, res) {
     var form = new formidable.IncomingForm();
+
+    console.log("In login");
 
     form.parse(req, async function (err, fields, files) {
         let usr = await is_user_login(fields.email, fields.password);
@@ -79,12 +132,16 @@ app.post('/login', function (req, res) {
             let usertt = {id, email, password, username, onoff, incall};
 
             let friends_s = await loadFriends(usr.id);
+
+            dict[id] = friends_s;
             // console.log(friends_s);
 
             req.session.user = usertt;
+            req.session.friends = friends_s;
             console.log(req.session.user);
 
-            res.render('account', {user: req.session.user, friends: friends_s});
+
+            res.render('account', {user: req.session.user, friends: req.session.friends});
         }
         else{
             res.render('login');
@@ -95,18 +152,25 @@ app.post('/login', function (req, res) {
 
 //Profile page
 app.get('/account', function (req, res) {
-    console.log(req.session.user);
+    console.log("In acc: ", req.session.user);
     if(req.session.user){
         // user can access account page
         let sess = req.session;
         //console.log(sess);
+        let fr = dict[sess.user.id];
+        console.log("Hey", fr);
 
-        res.render('account', {user: sess.user});
+        res.render('account', {user: sess.user, friends: fr});
     }
     else{
         // user cannot access account page
         res.render('login');
     }
+});
+
+app.post('/account', function (req, res) {
+    console.log("In acc Heyey: ", req.body.name);
+
 });
 
 //Value 1 is registration
@@ -219,8 +283,10 @@ async function make_user_on(id) {
 
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`App listening to ${PORT}....`) ;
-    console.log('Press Ctrl+C to quit.')
-});
+
+http.listen(PORT, () => console.log(`Active on ${PORT} PORT`));
+// app.listen(PORT, () => {
+//     console.log(`App listening to ${PORT}....`) ;
+//     console.log('Press Ctrl+C to quit.')
+// });
 
