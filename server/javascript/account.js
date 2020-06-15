@@ -95,14 +95,40 @@ String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-function displayFriends(friends) {
+function displayFriends(friends, u_name) {
     clearActive();
     clearDiv();
 
+    let clr = document.getElementById("undeAfisez");
     let tab1 = document.getElementById("tabFriends");
     makeActive(tab1);
 
-    let clr = document.getElementById("undeAfisez");
+    var f = document.createElement("form");
+    f.setAttribute('method', "post");
+    f.setAttribute('action', "addfriend");
+
+    var i1 = document.createElement("input");
+    i1.type = "text";
+    i1.name = "newFriend";
+
+    var i2 = document.createElement("input");
+    i2.type = "text";
+    i2.name = "user";
+    i2.value = u_name.slice(1,-1);
+    i2.style.display = "none";
+
+    var s = document.createElement("input");
+    s.type = "submit";
+    s.value = "Submit";
+
+    f.appendChild(i1);
+    f.appendChild(i2);
+    f.appendChild(s);
+
+    dv = document.createElement("div");
+    clr.appendChild(dv);
+    dv.appendChild(f);
+
 
     friends = transformToArray(friends);
     console.log(friends);

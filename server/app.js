@@ -5,6 +5,7 @@ const cors = require('cors');
 const session = require('express-session');
 const formidable = require("formidable");
 const redis = require('redis');
+const { find_user } = require('./routes/api/dbmethods');
 const redisStore = require('connect-redis')(session);
 const client  = redis.createClient();
 const app = express();
@@ -65,6 +66,25 @@ function SendAnswer(data) {
 // app.use('/app_files', express.static('app_files'));
 // app.use('/app_pictures', express.static('app_pictures'));
 // app.use('/uploads_from_user', express.static('uploads_from_user'));
+
+app.post('/addfriend', function (req, res) {
+    var form = new formidable.IncomingForm();
+
+    form.parse(req, async function (err, fields, files) {
+        let user1 = await is_user(fields.newFriend);
+        if(user1){
+            console.log(fields.user, fields.newFriend);
+            const app_ld = require('./routes/api/dbmethods');
+            let pool = app_ld.connect_pool();
+            console.log(user1, user1.id);
+            let user2 = await is_user(fields.user);
+            console.log("A: ", user2.id);
+            app_ld.add_friend(pool, user1.id, user2.id);
+        }
+    });
+
+    res.redirect("login");
+});
 
 //setez o sesiune
 app.use(session({
@@ -246,6 +266,22 @@ async function is_user_registration (email){
                 else{
                     return resolve(result[0]);
                 }
+            }
+        })
+    })
+}
+
+function is_user(username){
+    const app_ld = require('./routes/api/dbmethods');
+    let pool = app_ld.connect_pool();
+
+    return new Promise(function(resolve, reject){
+        app_ld.find_user(pool, username).then(result => {
+            if(result == false){
+                return resolve(false);
+            }
+            else{
+                return resolve(result[0]);
             }
         })
     })

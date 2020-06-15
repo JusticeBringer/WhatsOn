@@ -158,7 +158,7 @@
             border: 1px solid black;
             border-radius: 2px;
             padding: 0.4vw;
-            width: 100%;
+            width: 20%;
             margin-bottom: 2vh;
         }
         .google-button:hover{
@@ -416,6 +416,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="bundle.js"></script>
     <script src="video.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 </div>
 
@@ -425,6 +426,7 @@
     <div class="fit10 fltLeftStyle"><p></p></div>
     <div class="fit60 fltLeftStyle" >
         <h2 class="mic-text"> Chat - messages will appear here </h2>
+        <button class="google-button" id="getMessage"> Get message </button>
         <div class="fit50 fltLeftStyle" id="chat" style="border: 1px solid black">
 
         </div>

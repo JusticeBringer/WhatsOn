@@ -50,13 +50,9 @@ import Download from "./components/Download";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Contact from "./components/Contact";
-
-import Users from "./components/Users";
-
 export default {
   name: 'App',
   components: {
-    Users,
     HeadLinks,
     Header,
     HeroImage,
