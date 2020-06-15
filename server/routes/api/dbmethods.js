@@ -15,7 +15,7 @@ module.exports = {
             var sql = "select * from users";
             pool.query(sql, function(err, result){
                 if(err){
-                    throw reject(err)
+                    throw reject(err);
                 }
                 else{
                     if(result.length === 0){
@@ -30,7 +30,7 @@ module.exports = {
     },
     add_user: function(pool, email, password, username){
         var sql = "insert into users (email, password, username) values (?, ?, ?)";
-        var values = [email, password, username]
+        var values = [email, password, username];
         pool.query(sql, values, function (err, result) {
             if (err) throw err;
             console.log("Adaugat user nou");
@@ -45,7 +45,7 @@ module.exports = {
                     throw reject(err)
                 }
                 else{
-                    if(result.length == 0){
+                    if(result.length === 0){
                         return false
                     }
                     else{
@@ -60,7 +60,7 @@ module.exports = {
         var values = [new_username, id]
         pool.query(sql, values, function(err, result){
             if(err)
-                throw err
+                throw err;
             else
                 console.log("Username changed for id" + id)
         })
@@ -70,7 +70,7 @@ module.exports = {
         var values = [new_email, id]
         pool.query(sql, values, function(err, result){
             if(err)
-                throw err
+                throw err;
             else
                 console.log("Email changed for id: " + id)
         })
@@ -80,7 +80,7 @@ module.exports = {
         var values = [new_password, id]
         pool.query(sql, values, function(err, result){
             if(err)
-                throw err
+                throw err;
             else
                 console.log("Password changed for id" + id)
         })
@@ -94,7 +94,7 @@ module.exports = {
                     throw reject(err)
                 }
                 else{
-                    if(result.length == 0){
+                    if(result.length === 0){
                         return false
                     }
                     else{
@@ -106,7 +106,7 @@ module.exports = {
     },
     add_friend: function(pool, id_sender, id_friend){
         var sql = "insert into friends (user_id_1, user_id_2) values (?, ?)";
-        var values = [id_sender, id_friend]
+        var values = [id_sender, id_friend];
         pool.query(sql, values, function (err, result) {
             if (err) throw err;
             console.log("Adaugat prietenie noua");
@@ -130,6 +130,14 @@ module.exports = {
                     }
                 }
             })
+        });
+    },
+    make_on: function (pool, id) {
+        var sql = "update users set onoff = 1 where id = ?";
+        var values = [id];
+        pool.query(sql, values, function (err) {
+            if (err) throw err;
+            console.log("Made user on");
         });
     }
 };

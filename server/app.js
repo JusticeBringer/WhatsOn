@@ -40,6 +40,7 @@ app.set('view engine', 'ejs');
 
 //Static files
 app.use('/javascript', express.static('javascript'));
+app.use('/cssforejs', express.static('css'));
 
 //Get users
 app.get('/', async (req, res) => {
@@ -66,15 +67,19 @@ app.post('/login', function (req, res) {
 
         if (usr){
 
+            await make_user_on(usr.id);
+
             let id = usr.id;
             let email = usr.email;
             let password = usr.password;
             let username = usr.username;
+            let onoff = usr.ONOFF;
+            let incall = usr.INCALL;
 
-            let usertt = {id, email, password, username};
+            let usertt = {id, email, password, username, onoff, incall};
 
             let friends_s = await loadFriends(usr.id);
-            console.log(friends_s);
+            // console.log(friends_s);
 
             req.session.user = usertt;
             console.log(req.session.user);
@@ -94,7 +99,7 @@ app.get('/account', function (req, res) {
     if(req.session.user){
         // user can access account page
         let sess = req.session;
-        console.log(sess);
+        //console.log(sess);
 
         res.render('account', {user: sess.user});
     }
@@ -107,7 +112,7 @@ app.get('/account', function (req, res) {
 //Value 1 is registration
 //Value 2 is login
 app.post('/', async (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
 
     if (req.body.valueCase === 1){ //registration
         if  (await is_user_registration(req.body.email) !== false){
@@ -203,6 +208,13 @@ async function is_user_login (email, password){
             }
         })
     })
+}
+
+async function make_user_on(id) {
+    const app_ld = require('./routes/api/dbmethods');
+    let pool = app_ld.connect_pool();
+
+    await app_ld.make_on(pool, id);
 }
 
 
