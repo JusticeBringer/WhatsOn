@@ -95,7 +95,7 @@ module.exports = {
                 }
                 else{
                     if(result.length === 0){
-                        return false
+                        return resolve(false)
                     }
                     else{
                         return resolve(result)
