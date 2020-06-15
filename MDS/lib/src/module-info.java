@@ -1,0 +1,4 @@
+module lib {
+    exports dto;
+}
+
