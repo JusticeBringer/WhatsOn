@@ -10,6 +10,10 @@ Aplicatie de video call 1-1 si chat global. Aplicatia este impartita intre parte
 
 1. [Prezentare java - 3 useri pe chat](https://www.youtube.com/watch?v=PyoA-qPEs8o&feature=youtu.be)
 
+### Tool
+
+[Board de gestinoare](https://kanbanflow.com/board/TxhcS3)
+
 ### Componenta echipei
 
 Partea de web
