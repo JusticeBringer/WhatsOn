@@ -23,13 +23,13 @@ It consists of the following parts:
 1. user stories (minimum 10), backlog creation - 2 pts
 2. design/architecture/UML - 2 pts
 3. source control (branch creation, merge/rebase, minimum 10 commits) - 2 pts
-4. teste automate (unit or integration) - minimum 5 - 3 pts
+4. automation testing (unit or integration) - minimum 5 - 3 pts
 5. bug reporting - 1 pt
 6. using a build tool - 1 pt
 7. refactoring (minimum 1), code standards - 1 pt
 8. design patterns - 1 pt
 
-Note: It is not a mistake that the sum of the points is 13, not 10. In this way you can choose which sub-points you make to get a grade of 10.
+Observation: It is not a mistake that the sum of the points is 13, not 10. In this way you can choose which sub-points you make to get a grade of 10.
 
 ## Project idea
 
@@ -44,21 +44,39 @@ For the web application:
 2. Ștefan Chițu ([github profile](https://github.com/jaoc12)) - backend, SQL queries and database design
 3. Daniel Simionov ([github profile](https://github.com/DanielM24)) - voice recognition with AI (implemented but not integrated)
 
-For the Java global chat:
+For the Java global chat server:
 
 1. Adrian Olaru ([github profile](https://github.com/adrianolaru99))
 2. Florin Emanuel Laiu ([github profile](https://github.com/florinlaiu))
 
+Each member contribution can be seen on his own branch, mentioning that at some point in the history of this repository commits I have made a bad push and some contributions of team members have been erased on the main branch.
 
-In mare parte, contributia fiecarui membru se poate vedea pe branch-ul fiecaruia, cu mentiunea ca, la un moment dat, am dat un push gresit si s-a mai sters din contributii.
+1. [justicebringer](https://github.com/JusticeBringer/SeeYou/tree/justicebringer) -> Arghire Gabriel
+2. [SQL](https://github.com/JusticeBringer/SeeYou/tree/SQL) -> Stefan Chitu
+3. [daniel](https://github.com/JusticeBringer/SeeYou/tree/daniel) -> Simionov Daniel
+4. [java](https://github.com/JusticeBringer/SeeYou/tree/java) -> Olaru Adrian and Laiu Florin
 
-1. justicebringer -> Arghire Gabriel
-2. SQL -> Stefan Chitu
-3. daniel -> Simionov Daniel
-4. java -> Olaru Adrian si Laiu Florin
+**Note:** The second part of the project (the java chat server) is implemented [in this repository](https://github.com/adrianolaru99/Proiect-MDS), but has also been committed here, so the entire project can be seen on this single repository.
 
-#### Partea de java a fost implementata [in acest repository](https://github.com/adrianolaru99/Proiect-MDS), dar s-a pus si aici ca sa fie proiectul intreg.
+### Solving the requirements
+
+1. user stories (minimum 10), backlog creation
+
+
+
+2. design/architecture/UML - 2 pts
+3. source control (branch creation, merge/rebase, minimum 10 commits) - 2 pts
+4. teste automate (unit or integration) - minimum 5 - 3 pts
+5. bug reporting - 1 pt
+6. using a build tool - 1 pt
+7. refactoring (minimum 1), code standards - 1 pt
+8. design patterns - 1 pt
 
 ## Tool 
 
 [Board de gestinoare](https://kanbanflow.com/board/TxhcS3)
+
+### Technologies used
+
+- For Web app: HTML, CSS, Javascript and the frameworks Vue.js, Node.js
+- For Java app: Java and the Maven build automation tool
