@@ -29,7 +29,7 @@ It consists of the following parts:
 7. refactoring (minimum 1), code standards - 1 pt
 8. design patterns - 1 pt
 
-Observation: It is not a mistake that the sum of the points is 13, not 10. In this way you can choose which sub-points you make to get a grade of 10.
+Note: It is not a mistake that the sum of the points is 13, not 10. In this way you can choose which sub-points you make to get a grade of 10.
 
 ## Project idea
 
@@ -61,22 +61,44 @@ Each member contribution can be seen on his own branch, mentioning that at some 
 ### Solving the requirements
 
 1. user stories (minimum 10), backlog creation
-
-
+  - As a user, I want to be able to start a video with another user
+  - As a user, I want to be able to chat with another user
+  - As a user, I want to be able to see the screen during a video session
+  - As a user, I want to be able to record a video session
+  - As a user, I want to have a list of contacts and start a conversation
+  - As a user, I want to see if I have an upcoming meeting
+  - As a user, I want to video call another user using my mobile device
+  - As a user, I want to chat with another user using my mobile device
+  
+  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/kanbanflow.JPG)
 
 2. design/architecture/UML - 2 pts
+  - The design of the website is similar to the design of the [Zoom website](https://zoom.us)
+  - The design of the global chat is made "ad-hoc"
+
 3. source control (branch creation, merge/rebase, minimum 10 commits) - 2 pts
-4. teste automate (unit or integration) - minimum 5 - 3 pts
+  - Each member has his own branch (as I said before, java part can also be seen [here](https://github.com/adrianolaru99/Proiect-MDS))
+  - Multiple merges and commits have been done
+
+4. automation testing (unit or integration) - minimum 5 - 3 pts
+  - Only one test has been done [here](https://github.com/JusticeBringer/SeeYou/blob/java/MDS/lib/src/dto/MesajTest.java)
+
 5. bug reporting - 1 pt
+  - There were 3 bugs reported at [issues page](https://github.com/JusticeBringer/SeeYou/issues)
+
 6. using a build tool - 1 pt
+  - For the java global chat server has been used Maven build automation tool
+
 7. refactoring (minimum 1), code standards - 1 pt
+  - No refactoring, but code standards may have been respected
+
 8. design patterns - 1 pt
+  - The Java team have used [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) and [Model–view–controller](https://en.wikipedia.org/wiki/Model–view–controller) design patterns
 
-## Tool 
-
-[Board de gestinoare](https://kanbanflow.com/board/TxhcS3)
+* task management
+  - We have used [KanbanFlow](https://kanbanflow.com) for the project management and a [WhatsApp](https://www.whatsapp.com) group for collaborating between messages.
 
 ### Technologies used
 
-- For Web app: HTML, CSS, Javascript and the frameworks Vue.js, Node.js
-- For Java app: Java and the Maven build automation tool
+- For the web app: HTML, CSS, Javascript and the frameworks Vue.js, Node.js
+- For the java app: Java and the Maven build automation tool
