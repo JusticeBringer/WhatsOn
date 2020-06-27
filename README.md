@@ -59,7 +59,7 @@ Each member contribution can be seen on his own branch, mentioning that at some 
 
 ### Solving the requirements
 
-1. user stories (minimum 10), backlog creation
+1. user stories (minimum 10 - we have 8), backlog creation
   - As a user, I want to be able to start a video with another user
   - As a user, I want to be able to chat with another user
   - As a user, I want to be able to see the screen during a video session
@@ -68,7 +68,8 @@ Each member contribution can be seen on his own branch, mentioning that at some 
   - As a user, I want to see if I have an upcoming meeting
   - As a user, I want to video call another user using my mobile device
   - As a user, I want to chat with another user using my mobile device
-  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/kanbanflow.JPG "Backlog creation")
+  - Backlog creation in KanbanFlow:
+  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/kanbanflow.JPG)
 
 2. design/architecture/UML - 2 pts
   - The design of the website is similar to the design of the [Zoom website](https://zoom.us)
