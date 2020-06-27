@@ -6,14 +6,13 @@ It has 2 parts:
   
 Below you can find the demo for the video call website, the demo for the Java chat server and afterwards you can find out project requirements and details.
 
-### Web video call demo
+### Website and video call demo
 
-1. [Prezentare toata aplicatia si video call fara perspectiva celei de-a 2-a persoana](https://www.youtube.com/watch?v=Iz1aeF_-MKc)
-2. [Prezentarea functionalitate de video call si de la a 2-a persoana](https://www.youtube.com/watch?v=jHIzn2DYtIU)
+[![Demo](https://github.com/JusticeBringer/SeeYou/blob/master/webapp.png)](https://youtu.be/xUPy6Q7Zqeg)
 
 ### Global chat server demo
 
-1. [Demo - 3 users on chat](https://www.youtube.com/watch?v=PyoA-qPEs8o&feature=youtu.be)
+[![Demo](https://github.com/JusticeBringer/SeeYou/blob/master/javachat.png)](https://www.youtube.com/watch?v=PyoA-qPEs8o&feature=youtu.be)
 
 ## Requirements
 
@@ -69,8 +68,7 @@ Each member contribution can be seen on his own branch, mentioning that at some 
   - As a user, I want to see if I have an upcoming meeting
   - As a user, I want to video call another user using my mobile device
   - As a user, I want to chat with another user using my mobile device
-  
-  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/kanbanflow.JPG)
+  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/kanbanflow.JPG "Backlog creation")
 
 2. design/architecture/UML - 2 pts
   - The design of the website is similar to the design of the [Zoom website](https://zoom.us)
@@ -95,8 +93,7 @@ Each member contribution can be seen on his own branch, mentioning that at some 
 8. design patterns - 1 pt
   - The Java team have used [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) and [Model–view–controller](https://en.wikipedia.org/wiki/Model–view–controller) design patterns
 
-* task management
-  - We have used [KanbanFlow](https://kanbanflow.com) for the project management and a [WhatsApp](https://www.whatsapp.com) group for collaborating between messages.
+Bonus: for task management we have used [KanbanFlow](https://kanbanflow.com) for the project management and a [WhatsApp](https://www.whatsapp.com) group for collaborating between messages.
 
 ### Technologies used
 
