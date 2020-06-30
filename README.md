@@ -72,14 +72,14 @@ Each member contribution can be seen on his own branch, mentioning that at some 
   ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/kanbanflow.JPG)
 
 2. design/architecture/UML - 2 pts
-  - Architecture of the web application: ![Web arch](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/schemeweb.png)
-  - Architecture of the java application: ![Java arch](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/schemejava.png)
+  - Architecture of the web application: ![Web arch](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/schemeweb.jpg)
+  - Architecture of the java application: ![Java arch](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/schemejava.jpg)
   - UML of the web app: ![Web UML](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/umlweb.png)
   - UML of the java app: ![Java UML](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/JavaIUml.png)
 
 3. source control (branch creation, merge/rebase, minimum 10 commits) - 2 pts
   - Each member has his own branch (as I said before, java part can also be seen [here](https://github.com/adrianolaru99/Proiect-MDS))
-  - Multiple merges, [pull requests](https://github.com/JusticeBringer/SeeYou/pulls?q=is%3Apr+is%3Aclosed) and [commits](https://github.com/JusticeBringer/SeeYou/commits/master) have been done
+  - Multiple [pull requests](https://github.com/JusticeBringer/SeeYou/pulls?q=is%3Apr+is%3Aclosed) and [commits](https://github.com/JusticeBringer/SeeYou/commits/master) have been done
 
 4. automation testing (unit or integration) - minimum 5 - 3 pts
   - Two javascript unit testing with [Jest](https://jestjs.io) were done [here](https://github.com/JusticeBringer/SeeYou/blob/master/server/javascript/account.test.js)
