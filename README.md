@@ -92,7 +92,8 @@ Each member contribution can be seen on his own branch, mentioning that at some 
   - For the java global chat server has been used Maven build automation tool
 
 7. refactoring (minimum 1), code standards - 1 pt
-  - No refactoring, but code standards may have been respected
+  - No refactoring
+  - For the Web application we followed these code standards:
 
 8. design patterns - 1 pt
   - The Java team have used [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) and [Model–view–controller](https://en.wikipedia.org/wiki/Model–view–controller) design patterns
@@ -101,5 +102,5 @@ Bonus: for task management we have used [KanbanFlow](https://kanbanflow.com) for
 
 ### Technologies used
 
-- For the web app: HTML, CSS, Javascript and the frameworks Vue.js, Node.js
-- For the java app: Java and the Maven build automation tool
+- For the web app: HTML, CSS, Javascript and the frameworks Vue.js, Node.js and [Jest](https://jestjs.io) for testing
+- For the java app: Java and the Maven build automation tool and [JUnit](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjF4-G56qnqAhWSM-wKHUiDDasQFjACegQIBBAB&url=http%3A%2F%2Fjunit.sourceforge.net%2Fjavadoc%2Forg%2Fjunit%2FAssert.html&usg=AOvVaw3XSRh_oR6oZJyXAWh1LNem) for testing
