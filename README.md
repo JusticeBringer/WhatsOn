@@ -12,7 +12,7 @@ Below you can find the demo for the video call website, the demo for the Java ch
 
 ### Global chat server demo
 
-[![Demo](https://github.com/JusticeBringer/SeeYou/blob/master/javachat.png)](https://www.youtube.com/watch?v=PyoA-qPEs8o&feature=youtu.be)
+[![Demo](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/javachat.png)](https://www.youtube.com/watch?v=PyoA-qPEs8o&feature=youtu.be)
 
 ## Requirements
 
@@ -69,11 +69,10 @@ Each member contribution can be seen on his own branch, mentioning that at some 
   - As a user, I want to video call another user using my mobile device
   - As a user, I want to chat with another user using my mobile device
   - Backlog creation in KanbanFlow:
-  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/kanbanflow.JPG)
+  ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/kanbanflow.JPG)
 
 2. design/architecture/UML - 2 pts
-  - The design of the website is similar to the design of the [Zoom website](https://zoom.us)
-  - The design of the global chat is made "ad-hoc"
+  - Architecture of the web application: [](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/webapp.png)
 
 3. source control (branch creation, merge/rebase, minimum 10 commits) - 2 pts
   - Each member has his own branch (as I said before, java part can also be seen [here](https://github.com/adrianolaru99/Proiect-MDS))
