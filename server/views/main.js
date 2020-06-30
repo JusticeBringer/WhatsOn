@@ -3,6 +3,21 @@ let socket = io();
 const video = document.querySelector('video');
 let client = {};
 //get stream
+
+const functionsMain = {
+    createDiv: () => {
+
+    }
+};
+
+function CreateDiv() {
+    let div = document.createElement('div');
+    div.setAttribute('class', "centered");
+    div.id = "muteText";
+    div.innerHTML = "Click video to Mute/Unmute friend";
+    document.querySelector('#peerDiv').appendChild(div);
+}
+
 navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     .then(stream => {
         socket.emit('NewClient');
@@ -97,12 +112,3 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 
     })
     .catch(err => document.write(err));
-
-
-function CreateDiv() {
-    let div = document.createElement('div');
-    div.setAttribute('class', "centered");
-    div.id = "muteText";
-    div.innerHTML = "Click video to Mute/Unmute friend";
-    document.querySelector('#peerDiv').appendChild(div);
-}

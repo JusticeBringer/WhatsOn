@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "../node_modules/.bin/nodemon server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch": "npx watchify views/main.js -o views/bundle.js"
   },
   "repository": {
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/JusticeBringer/SeeYou#readme",
   "dependencies": {
     "audit": "0.0.6",
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "connect-redis": "^4.0.4",
     "ejs": "^3.0.1",
@@ -39,21 +40,23 @@
     "redis": "^3.0.2",
     "serve": "^11.3.2",
     "server": "^1.0.27",
+    "simple-peer": "^9.2.1",
     "socket.io": "^2.3.0",
-    "start": "^5.1.0",
-    "simple-peer": "^9.2.1"
+    "start": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "ajv-keywords": "^3.5.0",
     "babel-loader": "^8.1.0",
     "cors": "^2.8.5",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
+    "jest": "^26.1.0",
     "nodemon": "^2.0.3",
+    "watchify": "^3.11.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-node-externals": "^1.7.2",
-    "watchify": "^3.11.1"
+    "webpack-node-externals": "^1.7.2"
   }
 }
