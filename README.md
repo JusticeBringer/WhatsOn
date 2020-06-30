@@ -8,7 +8,7 @@ Below you can find the demo for the video call website, the demo for the Java ch
 
 ### Website and video call demo
 
-[![Demo](https://github.com/JusticeBringer/SeeYou/blob/master/webapp.png)](https://youtu.be/xUPy6Q7Zqeg)
+[![Demo](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/webapp.png)](https://youtu.be/xUPy6Q7Zqeg)
 
 ### Global chat server demo
 
