@@ -93,7 +93,7 @@ Each member contribution can be seen on his own branch, mentioning that at some 
 
 7. refactoring (minimum 1), code standards - 1 pt
   - No refactoring
-  - For the Web application we followed these code standards:
+  - For the Web application we followed these code standards: ![Code standard for web](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/codeweb.jpeg)
 
 8. design patterns - 1 pt
   - The Java team have used [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) and [Model–view–controller](https://en.wikipedia.org/wiki/Model–view–controller) design patterns
