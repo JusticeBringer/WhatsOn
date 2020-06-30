@@ -72,7 +72,7 @@ Each member contribution can be seen on his own branch, mentioning that at some 
   ![Backlog creation](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/kanbanflow.JPG)
 
 2. design/architecture/UML - 2 pts
-  - Architecture of the web application: ![](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/webapp.png)
+  - Architecture of the web application: ![Web arch](https://github.com/JusticeBringer/SeeYou/blob/master/zimages/webapp.png)
 
 3. source control (branch creation, merge/rebase, minimum 10 commits) - 2 pts
   - Each member has his own branch (as I said before, java part can also be seen [here](https://github.com/adrianolaru99/Proiect-MDS))
