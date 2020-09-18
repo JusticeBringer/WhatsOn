@@ -1,5 +1,0 @@
-module server {
-
-    requires lib;
-
-}
