@@ -83,7 +83,7 @@ Each member contribution can be seen on his own branch, mentioning that at some 
 
 4. automation testing (unit or integration) - minimum 5 - 3 pts
   - Two javascript unit testing with [Jest](https://jestjs.io) were done [here](https://github.com/JusticeBringer/SeeYou/blob/master/server/javascript/account.test.js)
-  - Only one test has been done [here](https://github.com/JusticeBringer/SeeYou/blob/java/MDS/lib/src/dto/MesajTest.java)
+  - Four java tests with JUnit [here](https://github.com/JusticeBringer/SeeYou/blob/java/MDS/src/main/java/lib/src/test/MesajTest.java)
 
 5. bug reporting - 1 pt
   - There were 3 bugs reported at [issues page](https://github.com/JusticeBringer/SeeYou/issues)
